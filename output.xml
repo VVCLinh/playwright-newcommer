@@ -1,27 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.12.1 on win32)" generated="2025-03-15T10:51:19.455073" rpa="false" schemaversion="5">
+<robot generator="Robot 7.2.2 (Python 3.12.1 on win32)" generated="2025-03-20T23:21:19.043302" rpa="false" schemaversion="5">
 <suite id="s1" name="TestTiki" source="D:\Pycharm\code\Playwright\playwright-newcommer\TestTiki.robot">
 <test id="s1-t1" name="Test Open Browser" line="6">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-03-20T23:21:19.224104" level="INFO">@{list} = [ username | mail@abc.com | welcome ]</msg>
+<var>@{list}</var>
+<arg>username</arg>
+<arg>mail@abc.com</arg>
+<arg>welcome</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-03-20T23:21:19.224104" elapsed="0.000000"/>
+</kw>
 <kw name="Openandwaitforpageload" owner="Openbrowser">
-<msg time="2025-03-15T10:51:33.694600" level="INFO">Opening browser</msg>
-<msg time="2025-03-15T10:51:33.694600" level="INFO">${browser} = None</msg>
+<msg time="2025-03-20T23:21:31.065980" level="INFO">Opening browser</msg>
+<msg time="2025-03-20T23:21:31.065980" level="INFO">${browser} = None</msg>
 <var>${browser}</var>
-<arg>https://tiki.vn</arg>
-<status status="PASS" start="2025-03-15T10:51:19.634278" elapsed="14.060322"/>
+<arg>https://roadmap.sh/qa</arg>
+<arg>/html/body/div[1]/nav/ul/li[2]/a/span</arg>
+<status status="PASS" start="2025-03-20T23:21:19.224104" elapsed="11.842971"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Input Value" owner="Openbrowser">
+<msg time="2025-03-20T23:21:31.219299" level="INFO">Input value username</msg>
+<arg>/html/body/div[2]/div/astro-island/form/input[1]</arg>
+<arg>${element}</arg>
+<status status="PASS" start="2025-03-20T23:21:31.068387" elapsed="0.150912"/>
+</kw>
+<var name="${element}">username</var>
+<status status="PASS" start="2025-03-20T23:21:31.067075" elapsed="0.152224"/>
+</iter>
+<iter>
+<kw name="Input Value" owner="Openbrowser">
+<msg time="2025-03-20T23:21:31.291356" level="INFO">Input value mail@abc.com</msg>
+<arg>/html/body/div[2]/div/astro-island/form/input[1]</arg>
+<arg>${element}</arg>
+<status status="PASS" start="2025-03-20T23:21:31.219299" elapsed="0.072057"/>
+</kw>
+<var name="${element}">mail@abc.com</var>
+<status status="PASS" start="2025-03-20T23:21:31.219299" elapsed="0.072057"/>
+</iter>
+<iter>
+<kw name="Input Value" owner="Openbrowser">
+<msg time="2025-03-20T23:21:31.334207" level="INFO">Input value welcome</msg>
+<arg>/html/body/div[2]/div/astro-island/form/input[1]</arg>
+<arg>${element}</arg>
+<status status="PASS" start="2025-03-20T23:21:31.291356" elapsed="0.042851"/>
+</kw>
+<var name="${element}">welcome</var>
+<status status="PASS" start="2025-03-20T23:21:31.291356" elapsed="0.042851"/>
+</iter>
+<var>${element}</var>
+<value>@{list}</value>
+<status status="PASS" start="2025-03-20T23:21:31.067075" elapsed="0.267132"/>
+</for>
+<kw name="Input Value" owner="Openbrowser">
+<msg time="2025-03-20T23:21:31.380164" level="INFO">Input value username</msg>
+<arg>/html/body/div[2]/div/astro-island/form/input[1]</arg>
+<arg>username</arg>
+<status status="PASS" start="2025-03-20T23:21:31.334207" elapsed="0.045957"/>
+</kw>
+<kw name="Input Value" owner="Openbrowser">
+<msg time="2025-03-20T23:21:31.457094" level="INFO">Input value mail@abc.com</msg>
+<arg>/html/body/div[2]/div/astro-island/form/input[2]</arg>
+<arg>mail@abc.com</arg>
+<status status="PASS" start="2025-03-20T23:21:31.380164" elapsed="0.076930"/>
+</kw>
+<kw name="Input Value" owner="Openbrowser">
+<msg time="2025-03-20T23:21:31.536596" level="INFO">Input value welcome</msg>
+<arg>/html/body/div[2]/div/astro-island/form/input[3]</arg>
+<arg>welcome</arg>
+<status status="PASS" start="2025-03-20T23:21:31.457094" elapsed="0.079502"/>
+</kw>
+<kw name="Click Element By Id" owner="Openbrowser">
+<msg time="2025-03-20T23:21:31.633685" level="INFO">Clicked element with ID: /html/body/div[2]/div/astro-island/form/button</msg>
+<arg>/html/body/div[2]/div/astro-island/form/button</arg>
+<status status="PASS" start="2025-03-20T23:21:31.537718" elapsed="0.095967"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-03-15T10:51:38.695808" level="INFO">Slept 5 seconds.</msg>
+<msg time="2025-03-20T23:21:36.634861" level="INFO">Slept 5 seconds.</msg>
 <arg>5s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-03-15T10:51:33.694600" elapsed="5.001208"/>
+<status status="PASS" start="2025-03-20T23:21:31.633685" elapsed="5.001176"/>
 </kw>
 <kw name="Close Broser Session" owner="Openbrowser">
-<msg time="2025-03-15T10:51:46.058748" level="INFO">Closed browser</msg>
-<status status="PASS" start="2025-03-15T10:51:38.695808" elapsed="7.362940"/>
+<msg time="2025-03-20T23:21:43.999348" level="INFO">Closed browser</msg>
+<status status="PASS" start="2025-03-20T23:21:36.635966" elapsed="7.363382"/>
 </kw>
-<status status="PASS" start="2025-03-15T10:51:19.633265" elapsed="26.426672"/>
+<status status="PASS" start="2025-03-20T23:21:19.222975" elapsed="24.776373"/>
 </test>
-<status status="PASS" start="2025-03-15T10:51:19.457149" elapsed="26.605964"/>
+<status status="PASS" start="2025-03-20T23:21:19.044300" elapsed="24.956117"/>
 </suite>
 <statistics>
 <total>
