@@ -1,26 +1,24 @@
 from selenium import webdriver
-import time
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
+import time
+import yaml
 
 
-def openandwaitforpageload(pageurl, element):
+def openandwaitforpageload(url):
     global driver
-    # Set up WebDriver
-    driver = webdriver.Chrome()
-    driver.get(pageurl)
+    driver = webdriver.Firefox()
+    driver.get(url)
     driver.maximize_window()
-    print("Opening browser")
-    time.sleep(5)
-    element = driver.find_element(By.XPATH, element)
-    element.click()
+    print("Browser opened successfully")
+    return driver
 
 
-def clickElementById(element_id):
+def clickElementByXpath(element_id):
     try:
         element = driver.find_element(By.XPATH, element_id)
         element.click()
-        print(f"Clicked element with ID: {element_id}")
+        print(f"Clicked element with Xpath: {element_id}")
     except Exception as e:
         print(f"Element with ID {element_id} doesnt exist: {e}")
 
@@ -39,3 +37,25 @@ def inputValue(element, value):
         print(f"Input value {value}")
     except Exception as e:
         print("Cant find element")
+
+
+def loadyamlfile(yml_file):
+    with open(yml_file, "r", encoding="utf-8") as file:
+        return yaml.safe_load(file)
+
+
+def validatetextinpage(text):
+    if text in driver.page_source:
+        print(f"✅ Text '{text}' is visible in page.")
+    else:
+        raise Exception(f"❌ Text '{text}' NOT found in page!")
+
+
+def checkelementvisible(locator_value):
+    try:
+        element = driver.find_element(By.XPATH, locator_value)
+        print("Element is visible in page")
+        return element.is_displayed()
+    except:
+        print("Element is invisible in page")
+        return False

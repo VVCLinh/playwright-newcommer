@@ -1,0 +1,7 @@
+login_page:
+  username: //input[@placeholder='Full Name']
+  email: //input[@placeholder='Email Address']
+  password: //input[@placeholder='Password']
+  button_submit: //button[@type='submit']
+  login_button: //button[@type='submit']
+  account_button: //button[@class='relative flex h-8 w-40 items-center justify-center gap-1.5 rounded-full bg-gradient-to-r from-purple-500 to-purple-700 px-4 py-2 text-sm font-medium text-white hover:from-purple-500 hover:to-purple-600']

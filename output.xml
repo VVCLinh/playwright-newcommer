@@ -1,101 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.12.1 on win32)" generated="2025-03-20T23:21:19.043302" rpa="false" schemaversion="5">
+<robot generator="Robot 7.2.2 (Python 3.12.1 on win32)" generated="2025-03-22T23:45:03.518057" rpa="false" schemaversion="5">
 <suite id="s1" name="TestTiki" source="D:\Pycharm\code\Playwright\playwright-newcommer\TestTiki.robot">
-<test id="s1-t1" name="Test Open Browser" line="6">
-<kw name="Create List" owner="BuiltIn">
-<msg time="2025-03-20T23:21:19.224104" level="INFO">@{list} = [ username | mail@abc.com | welcome ]</msg>
-<var>@{list}</var>
-<arg>username</arg>
-<arg>mail@abc.com</arg>
-<arg>welcome</arg>
-<doc>Returns a list containing given items.</doc>
-<status status="PASS" start="2025-03-20T23:21:19.224104" elapsed="0.000000"/>
-</kw>
+<test id="s1-t1" name="Test Open Browser" line="8">
+<kw name="Sign Up With New User" owner="Keywork">
 <kw name="Openandwaitforpageload" owner="Openbrowser">
-<msg time="2025-03-20T23:21:31.065980" level="INFO">Opening browser</msg>
-<msg time="2025-03-20T23:21:31.065980" level="INFO">${browser} = None</msg>
+<msg time="2025-03-22T23:45:12.979502" level="INFO">Browser opened successfully</msg>
+<msg time="2025-03-22T23:45:12.979502" level="INFO">${browser} = &lt;selenium.webdriver.firefox.webdriver.WebDriver (session="01cbf47e-2ab3-48e8-8326-901637569047")&gt;</msg>
 <var>${browser}</var>
-<arg>https://roadmap.sh/qa</arg>
-<arg>/html/body/div[1]/nav/ul/li[2]/a/span</arg>
-<status status="PASS" start="2025-03-20T23:21:19.224104" elapsed="11.842971"/>
+<arg>https://roadmap.sh/signup</arg>
+<status status="PASS" start="2025-03-22T23:45:03.747932" elapsed="9.231570"/>
 </kw>
-<for flavor="IN">
-<iter>
-<kw name="Input Value" owner="Openbrowser">
-<msg time="2025-03-20T23:21:31.219299" level="INFO">Input value username</msg>
-<arg>/html/body/div[2]/div/astro-island/form/input[1]</arg>
-<arg>${element}</arg>
-<status status="PASS" start="2025-03-20T23:21:31.068387" elapsed="0.150912"/>
-</kw>
-<var name="${element}">username</var>
-<status status="PASS" start="2025-03-20T23:21:31.067075" elapsed="0.152224"/>
-</iter>
-<iter>
-<kw name="Input Value" owner="Openbrowser">
-<msg time="2025-03-20T23:21:31.291356" level="INFO">Input value mail@abc.com</msg>
-<arg>/html/body/div[2]/div/astro-island/form/input[1]</arg>
-<arg>${element}</arg>
-<status status="PASS" start="2025-03-20T23:21:31.219299" elapsed="0.072057"/>
-</kw>
-<var name="${element}">mail@abc.com</var>
-<status status="PASS" start="2025-03-20T23:21:31.219299" elapsed="0.072057"/>
-</iter>
-<iter>
-<kw name="Input Value" owner="Openbrowser">
-<msg time="2025-03-20T23:21:31.334207" level="INFO">Input value welcome</msg>
-<arg>/html/body/div[2]/div/astro-island/form/input[1]</arg>
-<arg>${element}</arg>
-<status status="PASS" start="2025-03-20T23:21:31.291356" elapsed="0.042851"/>
-</kw>
-<var name="${element}">welcome</var>
-<status status="PASS" start="2025-03-20T23:21:31.291356" elapsed="0.042851"/>
-</iter>
+<kw name="Loadyamlfile" owner="Openbrowser">
+<msg time="2025-03-22T23:45:12.985620" level="INFO">${element} = {'login_page': {'username': "//input[@placeholder='Full Name']", 'email': "//input[@placeholder='Email Address']", 'password': "//input[@placeholder='Password']", 'button_submit': "//button[@type='sub...</msg>
 <var>${element}</var>
-<value>@{list}</value>
-<status status="PASS" start="2025-03-20T23:21:31.067075" elapsed="0.267132"/>
-</for>
-<kw name="Input Value" owner="Openbrowser">
-<msg time="2025-03-20T23:21:31.380164" level="INFO">Input value username</msg>
-<arg>/html/body/div[2]/div/astro-island/form/input[1]</arg>
-<arg>username</arg>
-<status status="PASS" start="2025-03-20T23:21:31.334207" elapsed="0.045957"/>
+<arg>${ELEMENT_FILE}</arg>
+<status status="PASS" start="2025-03-22T23:45:12.980500" elapsed="0.005120"/>
 </kw>
 <kw name="Input Value" owner="Openbrowser">
-<msg time="2025-03-20T23:21:31.457094" level="INFO">Input value mail@abc.com</msg>
-<arg>/html/body/div[2]/div/astro-island/form/input[2]</arg>
-<arg>mail@abc.com</arg>
-<status status="PASS" start="2025-03-20T23:21:31.380164" elapsed="0.076930"/>
+<msg time="2025-03-22T23:45:13.063788" level="INFO">Input value chilinh1</msg>
+<arg>${element}[login_page][username]</arg>
+<arg>${username}</arg>
+<status status="PASS" start="2025-03-22T23:45:12.986656" elapsed="0.077132"/>
 </kw>
 <kw name="Input Value" owner="Openbrowser">
-<msg time="2025-03-20T23:21:31.536596" level="INFO">Input value welcome</msg>
-<arg>/html/body/div[2]/div/astro-island/form/input[3]</arg>
-<arg>welcome</arg>
-<status status="PASS" start="2025-03-20T23:21:31.457094" elapsed="0.079502"/>
+<msg time="2025-03-22T23:45:13.099205" level="INFO">Input value vvovanchilinhdh17dt@gmail.com</msg>
+<arg>${element}[login_page][email]</arg>
+<arg>${email}</arg>
+<status status="PASS" start="2025-03-22T23:45:13.063788" elapsed="0.036413"/>
 </kw>
-<kw name="Click Element By Id" owner="Openbrowser">
-<msg time="2025-03-20T23:21:31.633685" level="INFO">Clicked element with ID: /html/body/div[2]/div/astro-island/form/button</msg>
-<arg>/html/body/div[2]/div/astro-island/form/button</arg>
-<status status="PASS" start="2025-03-20T23:21:31.537718" elapsed="0.095967"/>
+<kw name="Input Value" owner="Openbrowser">
+<msg time="2025-03-22T23:45:13.122752" level="INFO">Input value 321733111</msg>
+<arg>${element}[login_page][password]</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2025-03-22T23:45:13.100201" elapsed="0.022551"/>
+</kw>
+<kw name="Click Element By Xpath" owner="Openbrowser">
+<msg time="2025-03-22T23:45:13.349698" level="INFO">Clicked element with Xpath: //button[@type='submit']</msg>
+<arg>${element}[login_page][button_submit]</arg>
+<status status="PASS" start="2025-03-22T23:45:13.122752" elapsed="0.226946"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-03-20T23:21:36.634861" level="INFO">Slept 5 seconds.</msg>
+<msg time="2025-03-22T23:45:18.349901" level="INFO">Slept 5 seconds.</msg>
 <arg>5s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-03-20T23:21:31.633685" elapsed="5.001176"/>
+<status status="PASS" start="2025-03-22T23:45:13.349698" elapsed="5.000203"/>
 </kw>
-<kw name="Close Broser Session" owner="Openbrowser">
-<msg time="2025-03-20T23:21:43.999348" level="INFO">Closed browser</msg>
-<status status="PASS" start="2025-03-20T23:21:36.635966" elapsed="7.363382"/>
+<kw name="Validatetextinpage" owner="Openbrowser">
+<msg time="2025-03-22T23:45:18.355226" level="INFO">✅ Text 'Verify your email address' is visible in page.</msg>
+<arg>Verify your email address</arg>
+<status status="PASS" start="2025-03-22T23:45:18.349901" elapsed="0.006369"/>
 </kw>
-<status status="PASS" start="2025-03-20T23:21:19.222975" elapsed="24.776373"/>
+<arg>${user}</arg>
+<arg>${mail}</arg>
+<arg>${pass}</arg>
+<doc>Create an user using custom creds</doc>
+<status status="PASS" start="2025-03-22T23:45:03.745605" elapsed="14.610665"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-22T23:45:23.356563" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-22T23:45:18.356270" elapsed="5.000293"/>
+</kw>
+<kw name="Close Broser Session" owner="Openbrowser" type="TEARDOWN">
+<msg time="2025-03-22T23:45:31.291417" level="INFO">Closed browser</msg>
+<status status="PASS" start="2025-03-22T23:45:23.356563" elapsed="7.934854"/>
+</kw>
+<tag>Signup</tag>
+<status status="PASS" start="2025-03-22T23:45:03.699416" elapsed="27.593073"/>
 </test>
-<status status="PASS" start="2025-03-20T23:21:19.044300" elapsed="24.956117"/>
+<status status="PASS" start="2025-03-22T23:45:03.519055" elapsed="27.774539"/>
 </suite>
 <statistics>
 <total>
 <stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
+<stat pass="1" fail="0" skip="0">Signup</stat>
 </tag>
 <suite>
 <stat name="TestTiki" id="s1" pass="1" fail="0" skip="0">TestTiki</stat>
